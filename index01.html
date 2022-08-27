@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+  <link rel="stylesheet" href="style.css" />
+  <style>
+body {
+  margin: 0;
+  padding: 0;
+}
+
+section {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  background: url(https://mathuwan.github.io/01.jpg);
+  background-size: cover;
+}
+
+.focus {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+  </style>
+  <title>Spotlight Effect on Mousemove | CSS & jQuery</title>
+</head>
+
+<body>
+  <section>
+    <div class="focus"></div>
+  </section>
+
+  <script src="https://code.jquery.com/jquery-3.4.1.slim.min.js" integrity="sha384-J6qa4849blE2+poT4WnyKhv5vZF5SrPo0iEjwBvKU7imGFAV0wwj1yYfoRSJoZ+n" crossorigin="anonymous"></script>
+  <script>
+    $(document).mousemove(function(e) {
+      var X = e.pageX;
+      var Y = e.pageY;
+      $(".focus").css(
+        "background",
+        "radial-gradient(circle at " +
+        X +
+        "px " +
+        Y +
+        "px, transparent, 6%, #333, #000 5%, #333 100%)"
+      );
+    });
+  </script>
+</body>
+
+</html>
